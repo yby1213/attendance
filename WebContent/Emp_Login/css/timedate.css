@@ -1,0 +1,270 @@
+	html, body {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	ul, li {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	#calendar {
+		width: 1260px;
+	}
+
+	.calendar {
+		position: relative;
+		font-family: "Chinese Quote", "Microsoft YaHei";
+		font-size: 14px;
+	}
+
+
+	.calendar-header {
+		padding: 11px 16px 11px 0;
+		text-align: right;
+	}
+
+	.calendar-select {
+		line-height: 1.5;
+		color: rgba(0, 0, 0, 0.65);
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: inline-block;
+		position: relative;
+		outline: 0;
+	}
+
+	.calendar-table {
+		width: 100%;
+		height: 100%;
+	}
+
+	.calendar-column-header,
+	.calendar-cell {
+		width: 14%
+	}
+
+	.calendar-column-header {
+		font-weight: 400;
+		text-align: right;
+		padding-right: 12px;
+	}
+
+	.calendar-table {
+		table-layout: fixed;
+	}
+
+	.calendar-cell {
+		color: rgba(0, 0, 0, 0.65);
+	}
+
+
+
+		.calendar-cell.calendar-last-month-cell,
+		.calendar-cell.calendar-next-month-cell {
+			color: rgba(0, 0, 0, 0.25);
+		}
+
+	.calendar-date {
+		padding: 4px 8px;
+		margin: 0 4px;
+		border-top: 2px solid #e8e8e8;
+	}
+
+	.calendar-cell.calendar-thisMonth .calendar-date,
+	.calendar-cell.calendar-today .calendar-date {
+		border-top-color: #1890ff;
+		background-color: #e6f7ff;
+	}
+
+	.calendar-date:hover {
+		background: #e6f7ff;
+	}
+
+
+	.calendar-value {
+		text-align: center;
+	}
+
+	.calendar-content {
+		height: 60px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: static;
+		width: auto;
+		left: auto;
+		bottom: auto;
+	}
+
+
+
+
+	.calendar-select {
+		font-size: 13px;
+		vertical-align: middle;
+	}
+
+	.btn.calendar-select-active {
+		border-color: #40a9ff;
+		z-index: 2;
+	}
+
+	.calendar-select:first-child {
+		margin-right: 10px;
+	}
+
+	.calendar-year-select,
+	.calendar-month-select {
+		border-radius: 4px;
+		border: 1px solid #d9d9d9;
+	}
+
+		.calendar-year-select:hover,
+		.calendar-month-select:hover {
+			border-color: #40a9ff;
+		}
+
+	.calendar-year-text,
+	.calendar-month-text {
+		margin: 0 10px;
+		line-height: 28px;
+	}
+
+	.calendar-icon {
+		margin: 0 10px 0 0;
+	}
+
+		.calendar-icon * {
+			color: rgba(0, 0, 0, 0.25);
+		}
+
+	.btn {
+		float: left;
+		padding: 5px 10px;
+		border: 1px solid #d9d9d9;
+		border-radius: 4px;
+	}
+
+	.btn-group {
+		float: left;
+		display: inline;
+		padding: 0 8px;
+	}
+
+		.btn-group > .btn {
+			position: relative;
+			float: left;
+		}
+
+			.btn-group > .btn:hover {
+				z-index: 2;
+				border-color: #40a9ff;
+			}
+
+		.btn-group .btn + .btn {
+			margin-left: -1px;
+		}
+
+		.btn-group > .btn:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		.btn-group > .btn:last-child:not(:first-child) {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+
+	/*dropdown-menu*/
+	ul.dropdown-month, .dropdown-month li,
+	ul.dropdown-year, .dropdown-year li {
+		list-style: none;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+
+	.dropdown-month.open,
+	.dropdown-year.open {
+		display: inline-block;
+		margin-top: 1px;
+		width: 100%;
+	}
+
+	.dropdown-month,
+	.dropdown-year {
+		height: 250px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		background: #fff;
+		width: 50px;
+		border: 1px solid #eee;
+		box-shadow: 0px 6px 12px rgba(0,0,0,0.175);
+		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+	}
+
+		.dropdown-month .month-item,
+		.dropdown-year .year-item {
+			font-size: 12px;
+			position: relative;
+			display: block;
+			padding: 5px 2px;
+			line-height: 20px;
+			font-weight: normal;
+			color: rgba(0, 0, 0, 0.65);
+			white-space: nowrap;
+			cursor: pointer;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-transition: background 0.3s ease;
+			transition: background 0.3s ease;
+		}
+
+	.month-item:hover,
+	.year-item:hover {
+		background: #e6f7ff;
+	}
+
+	.year-item.active {
+		background-color: #fafafa;
+		font-weight: 600;
+		color: rgba(0, 0, 0, 0.65);
+	}
+	/*自定义事件样式*/
+	ul.events li {
+		white-space: nowrap;
+		font-size: 13px;
+		padding: 1px 2px;
+	}
+
+		ul.events li span {
+			margin-left: 5px;
+		}
+
+		ul.events li:before {
+			content: "*"
+		}
+
+	/*scrollbar*/
+	*::-webkit-scrollbar {
+		width: 8px;
+		background-color: #fff;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: #ddd;
+		border-radius: 8px;
+		-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, .3);
+	}
+
